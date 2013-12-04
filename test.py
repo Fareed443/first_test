@@ -11,6 +11,7 @@ class test(osv.osv):
         'name': fields.char('Name', size=64, required=True , tranlsate = True),
         'date': fields.date('Date',),
         'city': fields.char('City',required=True, size=50),
+#        'testing': fields.char('City',required=True, size=50),
         'state':fields.char('State',required=True, size=50),
         'zip'  :fields.char('Zip', size=50),   
         'lines' : fields.one2many('test.child','test_ids',ondelete = 'cascade'),  
