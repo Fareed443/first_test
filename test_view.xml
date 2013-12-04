@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    
+   <!-- From View Of Test --> 
+	 <record model="ir.ui.view" id="view_test_form">
+            <field name="name">test</field>
+            <field name="model">test</field>
+            <field name="arch" type="xml">
+                <form string="Test">
+                           <group> 
+                            <field name="name"/>
+                            <field name="date"/>                            
+                            <field name="city" />                        
+                            <field name="state" />                
+                            <field name="zip"/>   
+                            </group>
+                            <newline/>
+                          	  <field name="lines" nolabel="1">
+                            		 <tree string="Details" >                                                
+  	                                              <field name="name" />
+  	                                              <field name="desc"/>
+  	                                 </tree>  
+  	                                 <form string="Details" >                                                
+  	                                              <field name="name" />
+  	                                              <field name="desc"/>
+  	                                 </form>      
+  	                                          
+                          	</field>
+            	</form>
+            </field>
+        </record>
+
+
+<!-- Tree view of Test -->
+
+        <record model="ir.ui.view" id="view_test_tree">
+            <field name="name">test</field>
+            <field name="model">test</field>
+            <field name="arch" type="xml">
+                <tree string="Test">
+                        <field name="name"/>
+                        <field name="date"/>                            
+                        <field name="city" />                        
+                        <field name="state" />                
+                        <field name="zip"/>                                                         
+                </tree>
+            </field>
+        </record>
+        
+        
+<!-- Action View of Test -->
+
+ 	<record model="ir.actions.act_window" id="action_test_form">
+                <field name="name">test</field>
+                <field name="res_model">test</field>
+                <field name="view_mode">form,tree</field>
+        </record>
+
+<!-- Main Menu (Practice) -->
+
+        <menuitem id="test_a" name="Test Menu" parent="" />
+        <menuitem id="test_b" name="Cust Info" parent="test_a"/>
+        <menuitem name="test_ord" parent="test_b" id="test_claim" action="action_test_form" />  
+        
+    </data>
+</openerp>
+
+
+
+
+
